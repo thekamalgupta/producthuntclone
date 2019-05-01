@@ -1,0 +1,26 @@
+#heading{
+    font-family: "Courier New";
+    font-size: 50px;
+    font-weight: bold;
+    height: 50px;
+    width: 346px;
+    border-style: solid;
+    border-color: turquoise;
+    background-color: lightcyan;
+}
+.name{
+    font-size: 20px;
+    
+    
+}
+#full{
+     height: 450px;
+    width: 350px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    background-color: turquoise;
+}
+.start{
+    opacity: 0.0;
+}

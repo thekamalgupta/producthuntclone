@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Product
+from .models import *
 from django.utils import timezone
 import operator
 # Create your views here.
@@ -43,5 +43,14 @@ def upvote(request, product_id):
     if request.method == 'POST':
         product = get_object_or_404(Product, pk=product_id)
         product.votes_total+=1
+        product.save()
+        return redirect('/products/'+str(product.id))
+
+@login_required(login_url="/accounts/signup")
+def add_comment(request,product_id):
+    if request.method == 'POST':
+        product = get_object_or_404(Product, pk=product_id)
+        add_comments = request.POST['text']
+        product.commentlist.append(add_comments)
         product.save()
         return redirect('/products/'+str(product.id))

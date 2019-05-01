@@ -7,7 +7,7 @@
   <img src="{{ product.icon.url }}" class="img-fluid" />
   </div>
   <div class="col-8">
-    <a href="{{ product.url }}"><h1>  {{ product.Title }}</h1></a>
+    <a href="{{ product.url }}" style="color:red"><h1>  {{ product.Title }}</h1></a>
   </div>
   </div>
 
@@ -35,7 +35,7 @@
       <div class="row">
       <div class="col-8">
 
-      <p>{{product.Body}}</p>
+      <p>{{product.Body|linebreaks}}</p>
         </div>
         </div>
       <form id="upvote" method="POST" action="{% url 'upvote' product.id%}">
